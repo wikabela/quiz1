@@ -1,0 +1,37 @@
+<div class="container"> <!--bootstrap template -->
+  <!-- Form -->
+   <div class="row">
+     <div class ="col-md-6">
+       <br>
+       <h2>Form Data Mahasiswa</h2>
+        <hr> 
+       <label class="from-label">NIM</label>
+       <input type="text" class="form-control" [(ngModel)]="nim">
+       <label class="from-label">Nama</label>
+       <input type="text" class="form-control" [(ngModel)]="nama">
+       <label class="from-label">Kelas</label>
+       <input type="text" class="form-control" [(ngModel)]="kelas">
+       <br>
+       <button class="btn btn-block btn-dark" (click)="TambahMahasiswa()">Tambah</button>
+     </div>
+      <!-- Hasil Form -->
+     <div class ="col-md-6" ><br><h2>Data Mahasiswa</h2><hr>
+       <div *ngFor="let mahasiswa of daftarMahasiswa">
+        <div class="card">
+          <div class="card-header">
+            <h4>{{ mahasiswa.nama }}</h4>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+            <h5>{{ mahasiswa.nim }}</h5>
+             <p>{{  mahasiswa.kelas }}<p>
+            </blockquote>
+        </div> 
+       </div>
+       <br>
+     </div>
+     </div>
+   </div>
+   </div>
+  
+   
